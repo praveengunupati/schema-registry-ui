@@ -1,5 +1,5 @@
 {
-  "name": "schema-editor-ui",
+  "name": "schema-registry-ui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
