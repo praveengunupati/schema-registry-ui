@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "schema-edit-ui": {
+    "schema-registry-ui": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,19 +13,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/schema-edit-ui",
+            "outputPath": "dist/schema-registry-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/custom-theme.scss", "src/styles.css"],
+            "scripts": [
+              "node_modules/ace-builds/src-min/ace.js",
+              "node_modules/ace-builds/src-min/theme-solarized_light.js",
+              "node_modules/ace-builds/src-min/mode-json.js",
+              { "bundleName": "worker-json", "input": "node_modules/ace-builds/src-min/worker-json.js" }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "schema-edit-ui:build"
+            "browserTarget": "schema-registry-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "schema-edit-ui:build:production"
+              "browserTarget": "schema-registry-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "schema-edit-ui:build"
+            "browserTarget": "schema-registry-ui:build"
           }
         },
         "test": {
@@ -79,31 +79,21 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "assets": ["src/favicon.ico", "src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "schema-edit-ui-e2e": {
+    "schema-registry-ui-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +102,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "schema-edit-ui:serve"
+            "devServerTarget": "schema-registry-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "schema-edit-ui:serve:production"
+              "devServerTarget": "schema-registry-ui:serve:production"
             }
           }
         },
@@ -124,13 +114,11 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "schema-edit-ui"
+  "defaultProject": "schema-registry-ui"
 }

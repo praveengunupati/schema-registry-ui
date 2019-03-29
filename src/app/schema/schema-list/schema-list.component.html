@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-list mat-elevation="8" *ngFor="let schema of schemas">
+    <mat-list-item (click)="clickSchema(schema)">
+      <h3 matLine>{{ schema.name }}{{ schema.id }}</h3>
+      <p matLine>
+        <span> Great</span>
+        <span class="demo-2">Cool </span>
+      </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>

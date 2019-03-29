@@ -1,0 +1,12 @@
+<div
+  ace-editor
+  [(text)]="schemaModel"
+  [mode]="'json'"
+  [theme]="'solarized_light'"
+  [options]="options"
+  [readOnly]="false"
+  [autoUpdateContent]="true"
+  [durationBeforeCallback]="1000"
+  (textChanged)="onChange($event)"
+  style="min-height: 200px; width:100%; overflow: auto;"
+></div>

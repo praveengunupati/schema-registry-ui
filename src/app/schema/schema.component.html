@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px" class="schema-container">
+  <div fxFlex="30%">
+    <app-schema-list (selectSchema)="onSchemaSelect($event)"> </app-schema-list>
+  </div>
+
+  <div fxFlex="70%">
+    <app-schema-ground [schema]="selectedSchema"></app-schema-ground>
+  </div>
+</div>

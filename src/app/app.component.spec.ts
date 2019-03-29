@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'schema-edit-ui'`, () => {
+  it(`should have as title 'schema-registry-ui'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('schema-edit-ui');
+    expect(app.title).toEqual('schema-registry-ui');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to schema-edit-ui!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to schema-registry-ui!');
   });
 });

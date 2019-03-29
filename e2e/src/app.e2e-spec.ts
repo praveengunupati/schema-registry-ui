@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to schema-edit-ui!');
+    expect(page.getTitleText()).toEqual('Welcome to schema-registry-ui!');
   });
 
   afterEach(async () => {
