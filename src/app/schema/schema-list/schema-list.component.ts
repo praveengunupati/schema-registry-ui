@@ -32,7 +32,8 @@ export class SchemaListComponent implements OnInit {
         ELEMENT_DATA.push({name: res[entry]})
       }
       this.dataSource=new MatTableDataSource(ELEMENT_DATA);
-    }); 
+    });
+    
   }
   
   

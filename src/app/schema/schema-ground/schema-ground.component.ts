@@ -11,6 +11,8 @@ export class SchemaGroundComponent {
   schemaModel = '';
   selectedSchema: Schema;
   subjectName: String ='';
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+
   @ViewChild('codeEditor') codeEditorElmRef: ElementRef;
   @Input()
   set schema(subjectName: String) {
@@ -28,6 +30,5 @@ export class SchemaGroundComponent {
   }
 
   onChange(text) {
-    console.log(text);
   }
 }

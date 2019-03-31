@@ -10,11 +10,18 @@
     font-style: oblique;
     max-height: 40px;
     min-height: 40px;
-    font-size: 20 px;
+    font-size: 25 px;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 span{
   
   display: block;
  
+}
+.subheader{
+  font-size:10px;
 }

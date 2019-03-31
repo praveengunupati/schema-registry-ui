@@ -1,0 +1,21 @@
+.schema-container {
+    margin: 30px;
+  }
+  .toolbar-citi-link {
+    max-height: 40px;
+    min-height: 40px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    font-style: oblique;
+    font-weight: normal;
+    
+  }
+  .toolbar-citi-link-span {
+    padding-left:50px;
+  }
+
+  a{
+    text-decoration: none;
+    color:black;
+  }

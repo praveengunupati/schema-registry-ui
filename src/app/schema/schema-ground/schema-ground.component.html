@@ -4,7 +4,9 @@
     <mat-card-header class="header">
       
         <div >
-          <span>{{selectedSchema.subject}} -  v.{{selectedSchema.version}} -  ID: {{selectedSchema.id}} </span>
+          <span>{{selectedSchema.subject}} </span>
+          <span class="spacer"></span>
+          <span class="subheader"> Version - {{selectedSchema.version}}  ID: {{selectedSchema.id}} </span>
           
         </div>
         
@@ -27,7 +29,10 @@
             ></div> 
           </mat-tab>
           <mat-tab label="INFO"> TODO </mat-tab>
-          <mat-tab label="CONFIG"> TODO </mat-tab>
+          <mat-tab label="CONFIG"> 
+             
+             
+          </mat-tab>
         </mat-tab-group>
         
       
