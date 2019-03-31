@@ -1,0 +1,36 @@
+.toolbar-header {
+    max-height: 30px;
+    min-height: 30px;
+    background-color: #000000;
+    color: white;
+    font-size: 14px;
+    font-style: oblique;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .span-padding {
+    padding: 0 14px;
+    padding-left:4px
+  }
+
+  .toolbar-citi-logo { 
+      height: 86px; 
+      background: url(citi-blue-bar.jpg) repeat-x ;
+      font-style: oblique;
+  }
+
+  .citi-logo { 
+    height: 16px; 
+    font-style: oblique;
+    padding-left:50px
+  }
+
+  a{
+    text-decoration: none;
+    color:white;
+  }
+  
+ 

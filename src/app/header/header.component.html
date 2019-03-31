@@ -1,3 +1,11 @@
-<mat-toolbar color="primary" role="heading">
-  <span>{{ title }}</span>
+<!-- As a link -->
+<mat-toolbar  role="heading" class="toolbar-header">
+  <span class="spacer"></span>
+  <span class="span-padding" routerLinkActive="active"><a href="/schema">Schema Registry</a></span>
+  <span class="span-padding" routerLinkActive="active"><a href="/topic">Topic Management</a></span>
 </mat-toolbar>
+<mat-toolbar color="primary" role="heading" class="toolbar-citi-logo">
+  <span class="citi-logo"><a href="#"><img alt="citi-logo"
+    src="./citi-logo-no-r.png"></a></span>
+</mat-toolbar>
+

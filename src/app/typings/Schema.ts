@@ -1,5 +1,7 @@
 export class Schema {
   id: number;
-  name: string;
+  version: number;
   schema: string;
+  subject: string;
+
 }

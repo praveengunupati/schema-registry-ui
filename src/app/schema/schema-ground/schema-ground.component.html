@@ -1,12 +1,36 @@
-<div
-  ace-editor
-  [(text)]="schemaModel"
-  [mode]="'json'"
-  [theme]="'solarized_light'"
-  [options]="options"
-  [readOnly]="false"
-  [autoUpdateContent]="true"
-  [durationBeforeCallback]="1000"
-  (textChanged)="onChange($event)"
-  style="min-height: 200px; width:100%; overflow: auto;"
-></div>
+
+
+<mat-card class="card">
+    <mat-card-header class="header">
+      
+        <div >
+          <span>{{selectedSchema.subject}} -  v.{{selectedSchema.version}} -  ID: {{selectedSchema.id}} </span>
+          
+        </div>
+        
+    </mat-card-header>
+    <mat-card-content class="content">
+
+      <mat-tab-group>
+          <mat-tab label="SCHEMA"> 
+              <div
+              ace-editor
+              [(text)]="schemaModel"
+              [mode]="'json'"
+              [theme]="'solarized_light'"
+              [options]="options"
+              [readOnly]="false"
+              [autoUpdateContent]="true"
+              [durationBeforeCallback]="1000"
+              (textChanged)="onChange($event)"
+              style="min-height: 500px; width:100%; overflow: auto;"
+            ></div> 
+          </mat-tab>
+          <mat-tab label="INFO"> TODO </mat-tab>
+          <mat-tab label="CONFIG"> TODO </mat-tab>
+        </mat-tab-group>
+        
+      
+      <!-- Insert content here -->
+    </mat-card-content>
+</mat-card>

@@ -1,12 +1,24 @@
 <mat-card>
-  <mat-list mat-elevation="8" *ngFor="let schema of schemas">
-    <mat-list-item (click)="clickSchema(schema)">
-      <h3 matLine>{{ schema.name }}{{ schema.id }}</h3>
-      <p matLine>
-        <span> Great</span>
-        <span class="demo-2">Cool </span>
-      </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </mat-list>
+ 
+    <div id="container">
+  
+        <div id="table">
+          <div id="table-container">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </mat-form-field>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <!-- Position Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef class="mat-row-header"> Subject Name</th>
+                <td mat-cell *matCellDef="let element" (click)="clickSchema(element.name)"> {{element.name}} </td>
+              </ng-container>
+      
+      
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
 </mat-card>
