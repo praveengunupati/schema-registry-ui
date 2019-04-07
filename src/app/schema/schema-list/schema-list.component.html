@@ -1,24 +1,27 @@
-<mat-card>
- 
-    <div id="container">
-  
-        <div id="table">
-          <div id="table-container">
-            <mat-form-field>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-              </mat-form-field>
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-              <!-- Position Column -->
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef class="mat-row-header"> Subject Name</th>
-                <td mat-cell *matCellDef="let element" (click)="clickSchema(element.name,row)" > {{element.name}} </td>
-              </ng-container>
-      
-      
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          </div>
-        </div>
-      </div>
+  <mat-card class="card">
+    
+    <mat-card-header class="header">
+      <mat-form-field style ="width: 100%" >
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Subject Names" type="search">
+        </mat-form-field>
+          <button mat-raised-button matSuffix mat-stroked-button  color="primary" class="float-right" aria-label="icon-button" (click)="clickSchema('clicked_new_schema')">
+              New Schema
+            </button>
+       
+    </mat-card-header>
+    <mat-card-content class="content" style="height: 60vh;overflow: auto">
+        <table mat-table [dataSource]="dataSource" style ="width: 100%"  class="mat-elevation-z8">
+            Position Column 
+           <ng-container matColumnDef="name">
+             <th mat-header-cell *matHeaderCellDef class="mat-row-header"> Subject Name</th>
+             <td mat-cell *matCellDef="let element" (click)="clickSchema(element.name,row)" > {{element.name}} </td>
+           </ng-container>
+   
+   
+           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         </table>
+    </mat-card-content>
+    
 </mat-card>
+

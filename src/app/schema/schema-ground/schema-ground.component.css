@@ -8,8 +8,8 @@
   background-color: #0072AA;
     color: white;
     font-style: oblique;
-    max-height: 40px;
-    min-height: 40px;
+    max-height: 46px;
+    min-height: 46px;
     font-size: 25 px;
 }
 
@@ -17,11 +17,26 @@
   flex: 1 1 auto;
 }
 
-span{
-  
-  display: block;
- 
-}
 .subheader{
   font-size:10px;
 }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.radio-button {
+  margin: 5px;
+}
+.float-right{
+  float: right;
+}
+
+.NewHeader{
+  font-style: oblique;
+  max-height: 70px;
+  min-height: 70px;
+}
+

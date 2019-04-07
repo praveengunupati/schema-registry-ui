@@ -18,12 +18,11 @@
 
   .toolbar-citi-logo { 
       height: 86px; 
-      background: url(citi-blue-bar.jpg) repeat-x ;
+      background: url('../../assets/citi-blue-bar.jpg') repeat-x ;
       font-style: oblique;
   }
 
   .citi-logo { 
-   
     font-style: oblique;
     padding-left:50px
   }

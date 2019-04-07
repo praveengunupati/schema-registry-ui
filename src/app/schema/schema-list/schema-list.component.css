@@ -1,5 +1,5 @@
 #container {
-    height: 40vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -36,11 +36,14 @@
     left: 0;
     right: 0;
     overflow: auto;
+   
   }
   
   #table-container table {
     width: 100%;
+   
   }
+ 
   
   .mat-row-header {
     position: sticky;
@@ -55,4 +58,16 @@
 .selected {
     background-color: #78ADD2;
   }
+
+  .float-right{
+    float: right;
+    padding-right:50px;
+    max-height: 40px;
+    min-height: 40px;
+  }
   
+  .header{
+    font-style: oblique;
+      max-height: 50px;
+      min-height: 50px;
+  }

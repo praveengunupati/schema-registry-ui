@@ -1,19 +1,28 @@
 
 
-<mat-card class="card">
+<mat-card class="card"  *ngIf="!clickNewSchema && selectedSchema.version">
+    <mat-progress-bar *ngIf="inprogress == true" mode="indeterminate"></mat-progress-bar>
     <mat-card-header class="header">
-      
-        <div >
-          <span>{{selectedSchema.subject}} </span>
-          <span class="spacer"></span>
-          <span class="subheader"> Version - {{selectedSchema.version}}  ID: {{selectedSchema.id}} </span>
-          
-        </div>
-        
+       
+        <mat-card-title >{{selectedSchema.subject}} </mat-card-title>
+        <span class="subheader">  ID: {{selectedSchema.id}} </span>
+        <span class="spacer"></span>
+        <mat-form-field class="float-right" style="background-color: white;text-align: center;">
+            <mat-select [(value)]="selectedSchema.version" (selectionChange)="getSchemaVersion()">
+              <mat-option *ngFor="let version of versions"  [value]="version">
+                Version {{version}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
     </mat-card-header>
     <mat-card-content class="content">
-
+        
+      <button mat-icon-button *ngIf="evolveSchema" class="float-right" aria-label="icon-button" (click)="cancelEvolveSchema()">
+        <mat-icon>cancel_presentation</mat-icon>
+      </button>
       <mat-tab-group>
+           
+          
           <mat-tab label="SCHEMA"> 
               <div
               ace-editor
@@ -21,21 +30,68 @@
               [mode]="'json'"
               [theme]="'solarized_light'"
               [options]="options"
-              [readOnly]="false"
+              [readOnly]="evolveSchema"
               [autoUpdateContent]="true"
               [durationBeforeCallback]="1000"
               (textChanged)="onChange($event)"
               style="min-height: 500px; width:100%; overflow: auto;"
-            ></div> 
+            ></div>
+
+            
+            <button mat-raised-button color="primary"  *ngIf="validate" [disabled]="disableValidate" class="float-right" (click)="validateSchema()">Validate</button>
+            <button mat-raised-button color="primary"  *ngIf="evolveSchema" class="float-right" (click)="updateSchema()">Evolve Schema</button>
+           
           </mat-tab>
-          <mat-tab label="INFO"> TODO </mat-tab>
           <mat-tab label="CONFIG"> 
              
+              <label id="radio-group-label">
+                <p>Current compatibility for <b>{{selectedSchema.subject}}</b> is: {{intialCompatibilityLevel}}</p>
+                <p>Change compatibility level to: </p>
+              </label>
+              <mat-radio-group
+                aria-labelledby="radio-group-label"
+                class="radio-group"
+                [(ngModel)]="selcompatibilityLevel">
+                <mat-radio-button class="radio-button" *ngFor="let compatibilityLevel of compatibilityLevels" [value]="compatibilityLevel">
+                  {{compatibilityLevel}}
+                </mat-radio-button>
+              </mat-radio-group>
+              <button mat-raised-button color="primary" (click)="updateConfiguration()">Update</button>
              
           </mat-tab>
+         
         </mat-tab-group>
         
       
       <!-- Insert content here -->
     </mat-card-content>
 </mat-card>
+
+
+<mat-card class="card"  *ngIf="clickNewSchema">
+    <mat-card-header class="NewHeader">
+   
+        <mat-form-field style="width:100%">
+            <input matInput   placeholder="Subject Name" [(ngModel)]="newSchemaName" required>
+            <button mat-raised-button matSuffix mat-stroked-button color="primary" [disabled]="disableValidate" (click)="createNewSchema()">Create Schema</button>
+        </mat-form-field>
+        
+       
+    </mat-card-header>
+    <mat-card-content class="content">
+        <div
+        ace-editor
+        [(text)]="newSchemaModel"
+        [mode]="'json'"
+        [theme]="'solarized_light'"
+        [options]="options"
+        [readOnly]="false"
+        [autoUpdateContent]="true"
+        [durationBeforeCallback]="1000"
+        (textChanged)="onChange($event)"
+        style="min-height: 500px; width:100%; overflow: auto;"
+      ></div>
+    </mat-card-content>
+    
+</mat-card>
+ 
